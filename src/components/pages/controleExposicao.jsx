@@ -1,56 +1,66 @@
-import { Input } from 'semantic-ui-react'
-// import { Button } from 'semantic-ui-react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Form } from 'semantic-ui-react'
-import  ToggleGroup from "../layout/buttonGroupProbabilidade";
-import Group from '../layout/buttonExposicao';
-
-// import { useDispatch, useSelector } from 'react-redux'
-// import { update } from '../redux/slice'
-
-function Controle_exposicao() {
-
-    const [objeto, setObject] = useState ( {descricao:''}, {tipoExposicao:''}, {resultadoExposicao:''} )
-
-    // const [object] = useState(useSelector(store => store.Controle_Exposicao))
-
-    /*const dispatch = useDispatch();
-
-    const handleUpdate = (e) => {
-        e.preventDefault();
-        dispatch(update(object))
-    }
+import ExposicaoButton from '../layout/buttonExposicao'
+import SeveridadeButtons from '../layout/buttonGroupSeveridade'
+import ProbabilidadeButtons from '../layout/buttonGroupProbabilidade'
+import { Input } from 'semantic-ui-react'
+import { DisplayContent, FlexButtons } from '../styles/contentStyles'
+/* import { update } from '../redux/slice'
+import { Button } from 'semantic-ui-react'
+import { setAgenteAtual } from '../redux/editarRiscoReducer'
+import { useDispatch, useSelector } from 'react-redux'
 */
 
+function Controle_exposicao({ data, updateDataHandler }) {
+
+    const [object, setObject] = useState(data);
+
+    useEffect(() => {
+        updateDataHandler(object);
+    }, [object, updateDataHandler]);
+
     const options = [
-        { key: 'c', text: 'Contato Dermal', value: 'contato dermal' },
         { key: 'n', text: 'Nenhum', value: 'nenhum' },
+        { key: 'c', text: 'Contato dermal', value: 'contato dermal' },
         { key: 'o', text: 'Outros', value: 'outro' },
-      ]
+    ]
 
     return (
-        <div className='display_content'>
-            <div>Descrição</div>
-                <Input type="text" value={objeto.descricao} 
-                onChange={(e) => setObject({...objeto, descricao: e.target.value})} fluid />
-                <div className='flex-container'>
-                    <div>Probalidade <ToggleGroup /></div>
-                    <div>Severidade <ToggleGroup /></div>
-                    <div > Grau de Exposição <Group /> </div>
-
-                </div>
-                    
-            <div>Tipo de Exposição</div>
+        <DisplayContent>
+            <div> Descrição </div>
+                <Input type="text" value={object.descricao2} 
+                onChange={(e) => (setObject({...object, descricao2: e.target.value}))} fluid />
+                    <br/>
+                <FlexButtons>
+                    <div> Probalidade <ProbabilidadeButtons updateValueHandler={(value) => setObject( {...object, probabilidade: value} ) } /> </div>
+                    <div> Severidade <SeveridadeButtons updateValueHandler={(value) => setObject( {...object, severidade: value} ) } /> </div>
+                    <div> &nbsp; Grau de Exposição <ExposicaoButton probabilidade={object.probabilidade} severidade={object.severidade} /> </div>
+                </FlexButtons>
+                    <br/>
+            <div> Tipo de Exposição </div>
             <div>
                 <Form.Select
                 options={options}/>
             </div>
-            <div class="flexbox-item-6">Resultado da Exposição</div>
-                <Input type="text" value={objeto.resultado} 
-                onChange={(e) => setObject({...objeto, resultado: e.target.value})} fluid />
-        </div>
-    
+                <br/>
+            <div> Resultado da Exposição </div>
+                <Input type="text" value={object.resultadoExposicao} 
+                onChange={(e) => (setObject({...object, resultadoExposicao: e.target.value}))} fluid />
+        </DisplayContent>
     )
 }
 
 export default Controle_exposicao
+
+/*
+const [objeto, setObject] = useState ( {descricao:''}, {tipoExposicao:''}, {resultadoExposicao:''} )
+const [objectStore] = useState(useSelector(store => store.agenteRisco.agenteAtual))
+    const [object, setObject] = useState(objectStore);
+
+    const dispatch = useDispatch();
+
+    const update = (e) => {
+        e.preventDefault();
+        dispatch(setAgenteAtual(object))
+    }
+*/

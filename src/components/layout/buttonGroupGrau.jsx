@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { ButtonToggle } from '../styles/buttonStylesOrange';
+import { useEffect, useState } from 'react'
+import * as Style from '../styles/buttonStylesGeneral'
 
 export default function Group({updateSelecao}) {
 
@@ -7,18 +7,17 @@ export default function Group({updateSelecao}) {
 
   const [active, setAtivo] = useState();
 
+  useEffect(() => {
+    
+  }, []);
+
   return (
-    <>
-      <div>
-        {options.map((option) =>
-          <>
-            <ButtonToggle ativo={active === option.id} onClick={() => { setAtivo(option.id); updateSelecao(option.id) } }>
-              {option.type}
-            </ButtonToggle>
-          </>
-        )}
-      </div>
-    </>
+    <div>
+      {options.map((option) =>
+        <Style.ButtonToggle ativo={active === option.id} onClick={() => { setAtivo(option.id); updateSelecao(option.id) } }>
+          {option.type}
+        </Style.ButtonToggle>
+      )}
+    </div>
   );
 }
-

@@ -9,7 +9,15 @@ const AgenteRiscoModel = {
   intensidade: '', 
   unidade: '', 
   limiteExposicao: '', 
-  possiveisDanos: ''
+  possiveisDanos: '',
+  potencialDano: '',
+  frequenciaExposicao: '',
+  descricao2: '',
+  probabilidade: '',
+  severidade: '',
+  grauExposicao: '',
+  resultadoExposicao: '',
+  descricao3: '',
 }
 
 const initialState = {

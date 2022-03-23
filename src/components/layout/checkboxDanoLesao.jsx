@@ -1,9 +1,7 @@
-import React from 'react'
 import { Checkbox } from 'semantic-ui-react'
 
-export default function CheckboxDanoLesao() {
-    
-  const [value, setValue] = React.useState()
+
+export default function CheckboxAtividade({data, onCheckHandler}) {    
 
   return (
     <>
@@ -12,24 +10,24 @@ export default function CheckboxDanoLesao() {
           radio
           label='Leve &nbsp;'
           value='Leve'
-          checked={value === 'Leve'}
-          onChange={(e, data) => setValue(data.value)}
+          checked={data === 'Leve'}
+          onChange={(e, data) => onCheckHandler(data.value)}
         />
 
         <Checkbox
           radio
           label='Moderado &nbsp;'
           value='Moderado'
-          checked={value === 'Moderado'}
-          onChange={(e, data) => setValue(data.value)}
+          checked={data === 'Moderado'}
+          onChange={(e, data) => onCheckHandler(data.value)}
         />
 
         <Checkbox
         radio
         label='Severo &nbsp;'
         value='Severo'
-        checked={value === 'Severo'}
-        onChange={(e, data) => setValue(data.value)}
+        checked={data === 'Severo'}
+        onChange={(e, data) => onCheckHandler(data.value)}
         />
     </>
   )

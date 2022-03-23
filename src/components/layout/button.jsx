@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { ButtonToggle } from '../styles/buttonStyles';
+import { useState } from 'react'
+import * as Style from '../styles/buttonStylesHeader'
 
 export default function ToggleGroup({updateSelecao}) {
 
@@ -8,20 +8,15 @@ export default function ToggleGroup({updateSelecao}) {
   const [active, setAtivo] = useState(1);
 
   return (
-    <>
-      <div>
-        {options.map((option) =>
-          <>
-            <ButtonToggle ativo={active === option.id} onClick={() => { setAtivo(option.id); updateSelecao(option.id) } }>
-              {option.type}
-            </ButtonToggle>
-          </>
-        )}
-      </div>
-    </>
+    <div>
+      {options.map((option) =>
+          <Style.ButtonToggle ativo={active === option.id} onClick={() => { setAtivo(option.id); updateSelecao(option.id) } }>
+            {option.type}
+          </Style.ButtonToggle>
+      )}
+    </div>
   );
 }
-
 
 /*
 function ActionLink() {

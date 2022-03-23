@@ -1,10 +1,7 @@
-import React from 'react'
 import { Checkbox } from 'semantic-ui-react'
 
-export default function CheckboxFreExposicao() {
+export default function CheckboxFreExposicao({data, onCheckHandler}) {
     
-  const [value, setValue] = React.useState()
-
   return (
     <>
       <p></p>
@@ -12,24 +9,24 @@ export default function CheckboxFreExposicao() {
           radio
           label='Habitual &nbsp;'
           value='Habitual'
-          checked={value === 'Habitual'}
-          onChange={(e, data) => setValue(data.value)}
+          checked={data === 'Habitual'}
+          onChange={(e, data) => onCheckHandler(data.value)}
         />
 
         <Checkbox
           radio
           label='Intermitente &nbsp;'
           value='Intermitente'
-          checked={value === 'Intermitente'}
-          onChange={(e, data) => setValue(data.value)}
+          checked={data === 'Intermitente'}
+          onChange={(e, data) => onCheckHandler(data.value)}
         />
 
        <Checkbox
         radio
         label='Eventual &nbsp;'
         value='Eventual'
-        checked={value === 'Eventual'}
-        onChange={(e, data) => setValue(data.value)}
+        checked={data === 'Eventual'}
+        onChange={(e, data) => onCheckHandler(data.value)}
         />
     </>
   )

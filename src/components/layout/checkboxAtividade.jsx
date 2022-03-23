@@ -1,13 +1,8 @@
-import { useState } from 'react'
-import { useSelector } from 'react-redux';
 import { Checkbox } from 'semantic-ui-react'
 //import { setAgenteAtual } from '../redux/agenteRiscoReducer'
 
 export default function CheckboxAtividade({data, onCheckHandler}) {
     
-  const [objectStore] = useState(useSelector(store => store.agenteRisco.agenteAtual))
-  const [object, setObject] = useState(objectStore);
-
   return (
     <>
       <p></p>

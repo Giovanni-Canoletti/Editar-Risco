@@ -1,47 +1,8 @@
-.header {
-    z-index: 999;
-    background-color: rgb(255, 255, 255);
-}
-
-body {
-    border-radius: 5px;
-    padding: top;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: gray;
-}
-
 .content {
-    position: relative;
     display: flex;
-    background-color: rgb(255, 255, 255);
-    height: 600px;
-    width: 650px;
+    background: rgb(255, 255, 255);
+    height: 565px;
     overflow: hidden;
     overflow: auto;
-}
-
-.display_content {
-    position: relative;
-    width: 620px;
-    margin-left: auto;
-    margin-right: auto;
-    
-}
-
-.EPC {
-    display: flex;
-    align-items: center;
-    grid-gap: 8px;
-}
-
-.flex-container {
-    display: flex;
-}
-
-.salvar {
-    padding: 5px ;
-    z-index: 999;
-    background-color: rgb(255, 255, 255);
+    z-index: 1000;
 }

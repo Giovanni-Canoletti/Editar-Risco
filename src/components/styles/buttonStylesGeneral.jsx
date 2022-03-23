@@ -1,22 +1,20 @@
-import styled from 'styled-components';
-// import { Button } from "semantic-ui-react";
-// import {Component} from 'react';
+import styled from 'styled-components'
 
-export const theme = {
-  orange: {
-    default: "#f2711c",
-    hover: "#fcb166",
+const theme = {
+  blue: {
+    default: "#00b5ad",
+    hover: "#9ececc",
     disabled: "#e0e1e2",
   }
 };
 
-export const Button = styled.button`
+const Button = styled.button`
   background-color: ${(props) => theme[props.theme].default};
   color: #5b5b5b;
-  padding: 10px 15px;
+  padding: 10px 25px;
   border-radius: 5px;
   border-width: 0;
-  margin: 5px 1px;
+  margin: 5px 5px 0px 0px;
   cursor: pointer;
   transition: ease background-color 300ms;
   &:hover {
@@ -24,12 +22,11 @@ export const Button = styled.button`
   }
   &:disabled {
     background-color: ${(props) => theme[props.theme].disabled};
-
   }
 `;
 
 Button.defaultProps = {
-  theme: "orange"
+  theme: "blue"
 };
 
 export const ButtonToggle = styled(Button)`
@@ -39,9 +36,6 @@ export const ButtonToggle = styled(Button)`
     `
     opacity: 1;
     color: #ffffff;
-
-
   `
   }
 `;
-

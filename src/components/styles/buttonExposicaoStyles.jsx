@@ -1,47 +1,28 @@
-import styled from 'styled-components';
-// import { Button } from "semantic-ui-react";
-// import {Component} from 'react';
+import styled from 'styled-components'
 
-export const theme = {
-  orange: {
-    default: "#3a3a3a",
-    hover: "#646464",
-    disabled: "#e0e1e2",
-  }
-};
+const colors = [
+    "#3a3a3a",
+    "#1de9b6",
+    "#1de9b6",
+    "#1bd669",
+    "#1bd669",
+    "#f2711c",
+    "#f2471c",
+];
 
-export const Button = styled.button`
-  background-color: ${(props) => theme[props.theme].default};
+const Button = styled.button`
+  background-color: ${(props) => colors[props.colors] };
   color: #ffffff;
-  padding: 10px 20px;
   border-radius: 5px;
   border-width: 0;
-  margin: 5px 5px;
-  width: 180.9px;
-  cursor: pointer;
-  transition: ease background-color 300ms;
-  &:hover {
-    background-color: ${(props) => theme[props.theme].hover};
-  }
-  &:disabled {
-    background-color: ${(props) => theme[props.theme].disabled};
-
-  }
+  padding: 10px;
+  margin: 5px 0px 0px 6px;
+  width: 245px;
+  transition: ease background-color 250ms;
 `;
 
 Button.defaultProps = {
-  theme: "orange"
+  colors: 0
 };
 
-export const ButtonToggle = styled(Button)`
-  background-color: #e7e7e7
-  ${({ ativo }) =>
-    ativo && 
-    `
-    opacity: 1;
-
-
-  `
-  }
-`;
-
+export const ButtonToggle = styled(Button)``;
