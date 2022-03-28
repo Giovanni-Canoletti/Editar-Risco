@@ -2,8 +2,8 @@ import styled from 'styled-components'
 
 const color = {
   teal: {
-    default: "#00b5ad",
-    hover: "#9ececc",
+    default: "#2185d0",
+    hover: "#c2c2c2",
     disabled: "#e0e1e2",
   }
 };
