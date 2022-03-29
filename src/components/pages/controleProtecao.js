@@ -9,7 +9,7 @@ import { setAgenteAtual } from '../redux/editarRiscoReducer'
 import { update } from '../redux/slice'
 */
 
-function Controle_protecao({data, updateDataHandler}) {
+function Controle_Protecao({data, updateDataHandler}) {
 
     const options = [
         { key: 'n', text: 'Não se Aplica', value: 'nao se aplica' },
@@ -46,6 +46,6 @@ function Controle_protecao({data, updateDataHandler}) {
     )
 }
 
-export default Controle_protecao
+export default Controle_Protecao
 
     // const [object, setObject] = useState ( {descricao:''} )

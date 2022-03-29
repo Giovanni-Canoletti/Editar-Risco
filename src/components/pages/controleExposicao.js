@@ -11,7 +11,7 @@ import { setAgenteAtual } from '../redux/editarRiscoReducer'
 import { useDispatch, useSelector } from 'react-redux'
 */
 
-function Controle_exposicao({ data, updateDataHandler }) {
+function Controle_Exposicao({ data, updateDataHandler }) {
 
     const [object, setObject] = useState(data);
 
@@ -50,7 +50,7 @@ function Controle_exposicao({ data, updateDataHandler }) {
     )
 }
 
-export default Controle_exposicao
+export default Controle_Exposicao
 
 /*
 const [objeto, setObject] = useState ( {descricao:''}, {tipoExposicao:''}, {resultadoExposicao:''} )

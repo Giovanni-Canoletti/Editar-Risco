@@ -12,7 +12,7 @@ import { Button } from 'semantic-ui-react'
 import Save from '../layout/save'
 */
 
-function Agente_risco({data, updateDataHandler}) {
+function Agente_Risco({data, updateDataHandler}) {
 
     const [object, setObject] = useState(data);
 
@@ -70,7 +70,7 @@ function Agente_risco({data, updateDataHandler}) {
     )
 }
 
-export default Agente_risco
+export default Agente_Risco
 
 /*
 const [objectStore] = useState(useSelector(store => store.agenteRisco.agenteAtual))
